@@ -64,7 +64,7 @@ const LeftSidebar = ({
         height,
         background: token.colorBgLayout,
         textAlign: 'center',
-        width: 150,
+        width: 200,
       }}
     >
       {Object.entries(pluginsRegistry).map(([label, plugin]) => {
@@ -73,13 +73,26 @@ const LeftSidebar = ({
           <Draggable key={label} scale={scale} basePdf={basePdf} plugin={plugin}>
             <Button
               title={label}
-              style={{ width: 125, height: 35, marginTop: '0.25rem', padding: '0.25rem' }}
+              style={{ width: 180, height: 45, marginTop: '0.25rem', padding: '0.25rem' }}
             >
-              {plugin.propPanel.defaultSchema.icon ? (
-                <div dangerouslySetInnerHTML={{ __html: plugin.propPanel.defaultSchema.icon }} />
-              ) : null}
-              <div style={{ overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                {plugin.propPanel.defaultSchema.label}
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                }}
+              >
+                {plugin.propPanel.defaultSchema.icon && (
+                  <div
+                    style={{ marginRight: '0.5rem' }}
+                    dangerouslySetInnerHTML={{ __html: plugin.propPanel.defaultSchema.icon }}
+                  />
+                )}
+                <span style={{ overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                  {plugin.propPanel.defaultSchema.label}
+                </span>
               </div>
             </Button>
           </Draggable>

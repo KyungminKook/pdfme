@@ -1,8 +1,8 @@
 {
   "name": "@kyungminkook/pdfme",
-  "version": "0.0.0",
-  "private": true,
-  "author": "hand-dot",
+  "version": "0.0.1",
+  "private": false,
+  "author": "kyungmin kook",
   "license": "MIT",
   "keywords": [
     "pdf",
@@ -19,10 +19,10 @@
   "homepage": "https://pdfme.com",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/pdfme/pdfme.git"
+    "url": "https://github.com/kyungminkook/pdfme.git"
   },
   "bugs": {
-    "url": "https://github.com/pdfme/pdfme/issues"
+    "url": "https://github.com/kyungminkook/pdfme/issues"
   },
   "workspaces": [
     "packages/common",

@@ -26,7 +26,7 @@ export abstract class BaseUIClass {
 
   protected size!: Size;
 
-  private lang: Lang = DEFAULT_LANG;
+  private lang: Lang = 'en';
 
   private font: Font = getDefaultFont();
 
@@ -35,7 +35,7 @@ export abstract class BaseUIClass {
   private options = {};
 
   private readonly setSize = debounce(() => {
-    if (!this.domContainer) throw Error(DESTROYED_ERR_MSG);
+    if (!this.domContainer) throw Error(`[@pdfme/ui] this instance is already destroyed`);
     this.size = {
       height: this.domContainer.clientHeight || window.innerHeight,
       width: this.domContainer.clientWidth || window.innerWidth,
@@ -88,14 +88,14 @@ export abstract class BaseUIClass {
   }
 
   public getTemplate() {
-    if (!this.domContainer) throw Error(DESTROYED_ERR_MSG);
+    if (!this.domContainer) throw Error(`[@pdfme/ui] this instance is already destroyed`);
 
     return this.template;
   }
 
   public updateTemplate(template: Template) {
     checkTemplate(template);
-    if (!this.domContainer) throw Error(DESTROYED_ERR_MSG);
+    if (!this.domContainer) throw Error(`[@pdfme/ui] this instance is already destroyed`);
 
     this.template = cloneDeep(template);
     this.render();
@@ -116,7 +116,7 @@ export abstract class BaseUIClass {
   }
 
   public destroy() {
-    if (!this.domContainer) throw Error(DESTROYED_ERR_MSG);
+    if (!this.domContainer) throw Error(`[@pdfme/ui] this instance is already destroyed`);
     ReactDOM.unmountComponentAtNode(this.domContainer);
 
     this.resizeObserver.unobserve(this.domContainer);
@@ -135,13 +135,13 @@ export abstract class PreviewUI extends BaseUIClass {
   }
 
   public getInputs() {
-    if (!this.domContainer) throw Error(DESTROYED_ERR_MSG);
+    if (!this.domContainer) throw Error(`[@pdfme/ui] this instance is already destroyed`);
 
     return this.inputs;
   }
 
   public setInputs(inputs: { [key: string]: string }[]) {
-    if (!this.domContainer) throw Error(DESTROYED_ERR_MSG);
+    if (!this.domContainer) throw Error(`[@pdfme/ui] this instance is already destroyed`);
     checkInputs(inputs);
 
     this.inputs = convertToStingObjectArray(inputs);

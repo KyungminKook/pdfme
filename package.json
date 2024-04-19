@@ -1,6 +1,6 @@
 {
   "name": "@kyungminkook/pdfme",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": false,
   "author": "kyungmin kook",
   "license": "MIT",
@@ -67,6 +67,7 @@
   },
   "main": ".prettierrc.js",
   "dependencies": {
+    "@kyungminkook/pdfme": "^0.0.2",
     "abab": "^2.0.6",
     "acorn": "^8.11.2",
     "acorn-globals": "^6.0.0",

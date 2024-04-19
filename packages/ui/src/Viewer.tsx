@@ -12,7 +12,7 @@ class Viewer extends PreviewUI {
   }
 
   protected render() {
-    if (!this.domContainer) throw Error(DESTROYED_ERR_MSG);
+    if (!this.domContainer) throw Error(`[@pdfme/ui] this instance is already destroyed`);
     ReactDOM.render(
       <AppContextProvider
         lang={this.getLang()}

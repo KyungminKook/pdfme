@@ -1,5 +1,5 @@
 {
-  "name": "@pdfme/generator",
+  "name": "@kyungminkook/pdfme-generator",
   "version": "0.0.0",
   "sideEffects": false,
   "author": "hand-dot",
@@ -76,6 +76,6 @@
     ]
   },
   "publishConfig": {
-    "access": "public"
+    "@kyungminkook:registry": "https://npm.pkg.github.com"
   }
 }
